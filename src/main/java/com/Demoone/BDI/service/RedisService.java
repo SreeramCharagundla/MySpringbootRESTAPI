@@ -68,6 +68,7 @@ public class RedisService {
     public void deletePlanById(String id) {
         redisTemplate.delete(id);
     }
+    
 
     // Helper method to convert byte array to hex string
     private static String bytesToHex(byte[] hash) {
@@ -76,7 +77,6 @@ public class RedisService {
             String hex = Integer.toHexString(0xff & hash[i]);
             if (hex.length() == 1) {
                 hexString.append('0');
-                
             }
             hexString.append(hex);
         }
